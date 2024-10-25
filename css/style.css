@@ -1,0 +1,1001 @@
+
+@keyframes gradientAnimation {
+    0% { background: linear-gradient(90deg, #101422 0%, #272b3b 90%); }
+    50% { background: linear-gradient(90deg, #272b3b 0%, #101422 90%); }
+    100% { background: linear-gradient(90deg, #101422 0%, #272b3b 90%); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Keyframes for scrolling animation */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left */
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+h2 {
+    font-family: 'Poppins', sans-serif; /* Ganti dengan font pilihan Anda */
+}
+
+h3 {
+    margin: 10; /* Menghilangkan margin default untuk h3 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    animation: gradientAnimation 11s ease infinite;
+    color: #ffffff;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: radial-gradient(circle, rgba(168,220,231,0.2) 10%, rgba(0,0,0,0.2) 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: background 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    max-width: 50rem; /* Membatasi ukuran lebar maksimum */
+    min-width: 50rem; /* Membatasi ukuran lebar minimum */
+    margin: 0 auto;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(168,220,231,0.2) 10%, rgba(0,0,0,0.2) 80%);
+    opacity: 0.6;
+    transform: rotate(45deg);
+    transition: opacity 0.5s ease, transform 1.5s ease;
+    z-index: 0;
+}
+
+.container:hover::before {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.2);
+}
+
+.container:hover {
+    background: linear-gradient(90deg, #101422 0%, #a8dce7 100%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+    transform-origin: center; /* Menjaga pusat elemen tetap di tengah saat di-hover */
+}
+
+.container .logo, .container .nav {
+    z-index: 1; 
+}
+
+.container .logo {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px; 
+    font-size: 16px; 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ffdddd;
+    transform: scale(1.1); 
+}
+
+.nav a.active, .nav a:hover {
+    color: #a8dce7;
+}
+
+.nav a.active::after, .nav a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #a8dce7;
+}
+.logo {
+    font-size: 24px;
+    color: #a8dce7;
+    font-weight: bold;
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    padding: 20px;
+    gap: 20px;
+}
+
+.profile-pic {
+    position: relative;
+    width: 26vw;
+    height: 26vw; 
+    border-radius: 50%;
+    background: url('/assets/images/budi.jpg') no-repeat center center/cover;
+    margin-right: 20px; 
+    transition: 0.2s linear;
+    margin-right: -10%;
+    box-shadow: #000;
+    cursor: pointer;
+}
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; 
+}
+.profile-pic:hover {
+    transform: scale(1.05);
+  }
+/* cv */
+.download-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #a8dce7;
+    border-radius: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.download-cv i {
+    font-size: 1rem;
+    transition: transform 0.3s ease; 
+}
+
+.download-cv:hover {
+    background: linear-gradient(90deg, #4c6d6a, #4a5a64); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); 
+}
+
+.download-cv:hover i {
+    transform: translateX(2px);
+}
+
+.download-cv:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+/* text animasi */
+.text-content {
+    max-width: 600px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.text-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px; 
+}
+
+.text-content h1 span {
+    color: #a8dce7;
+}
+
+.text-content h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.text-content h2 span {
+    color: #a8dce7;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0; /* Kurangi margin agar lebih dekat dengan elemen lain */
+}
+.social-icons {
+    display: flex;
+    gap: 10px; 
+    margin: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center; 
+}
+.social-icons a {
+    color: #fff;
+    font-size: 2rem;
+    border: 0.2rem solid #a8dce7;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 3rem 1.5rem 3rem 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.social-icons a:hover {
+    background: linear-gradient(135deg, #ffffff, #a8dce7);
+    color: #000;
+    transform: scale(1.1) rotate(5deg); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+.hire-me {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #a8dce7;
+    border-radius: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.hire-me:hover {
+    background: #a8dce7;
+    color: #000;
+}
+
+.container, .profile-pic, .text-content {
+    transition: all 0.4s ease;
+}
+
+.additional-content {
+    padding: 50px;
+    text-align: center;
+}
+.additional-content h2 {
+    font-size: 2em;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+/* Section titles underline effect */
+.additional-content h2, .skills h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.additional-content h2::after, .skills h2::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #a8dce7;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+    width: 0;
+}
+
+.additional-content h2:hover::after, .skills h2:hover::after {
+    width: 100%;
+}
+
+/* cards section */
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 658px; 
+    height: 400px; 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; 
+    border-radius: 10px;
+    border: 2px solid #a8dce7;
+}
+
+.card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.card-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(16, 20, 34, 0.7); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    
+}
+
+.card:hover img {
+    transform: scale(1.3);
+}
+
+.card:hover .card-description {
+    opacity: 1;
+}
+/* skills */
+.skills {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+    overflow: hidden; /* Hide overflow of the skills section */
+    position: relative; /* Ensure positioning context for children */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    animation: scrollLeft 15s linear infinite; /* Scroll from right to left */
+}
+
+.skill {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100px; /* Fixed width for skills */
+    text-align: center;
+    flex-shrink: 0; /* Prevent shrinking */
+    margin: 0 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+.skill i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/*  skill colors */
+.skill-html {
+    background-color: #E34F26; /* Warna HTML5 */
+}
+
+.skill-css {
+    background-color: #1572B6; /* Warna CSS3 */
+}
+
+.skill-js {
+    background-color: #F7DF1E; /* Warna JavaScript */
+    color: #333; /* Teks lebih gelap agar terbaca */
+}
+
+.skill-react {
+    background-color: #61DAFB; /* Warna React */
+    color: #333;
+}
+
+.skill-node {
+    background-color: #83CD29; /* Warna Node.js */
+}
+
+.skill-mysql {
+    background-color: #00758F; /* Warna MySQL */
+}
+
+.skill-python {
+    background-color: #2596be;
+}
+.skill-arduino {
+    background-color: #E34F26;
+}
+.skill-ai {
+    background-color: #1572B6;
+}
+.skill-networking {
+    background-color: #F7DF1E;
+}
+.skill-express {
+    background-color: #61DAFB;
+}
+
+.skill:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Softer and larger shadow */
+    background-color: #444; /* Slightly darker background on hover */
+    animation: pulse 0.6s infinite alternate;
+}
+
+/* skillstext */
+.skills-section {
+    margin: 40px auto; /* Satu baris untuk margin atas dan tengah */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow untuk kesan kedalaman */
+    max-width: 1200px;
+}
+
+.skills-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center; /* Pusatkan teks */
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Membuat skill-item berada di tengah */
+}
+
+.skill-item {
+    /* background: linear-gradient(135deg, #2c2c2e, #1c1c1e); */
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 1em;
+    text-align: center;
+    transition: background 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Menambahkan shadow pada setiap item */
+}
+
+.skill-item:hover {
+    background: linear-gradient(135deg, #3e3e40, #2c2c2e); /* Warna gradasi yang berubah pada hover */
+    transform: translateY(-8px); /* Angkat item lebih tinggi pada hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Shadow lebih tebal pada hover */
+}
+
+/* footer */
+.footer {
+    background-color: #101422;
+    color: #a8dce7;
+    padding: 20px;
+    text-align: center;
+  }
+
+/* preloader */
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.skill-item {
+    transition: background 0.4s ease, transform 0.3s ease;
+    -webkit-transition: background 0.4s ease, transform 0.3s ease;
+    -moz-transition: background 0.4s ease, transform 0.3s ease;
+    -o-transition: background 0.4s ease, transform 0.3s ease;
+  }
+
+/* contact style */
+.contact {
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  }
+  
+  .contact p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .contact form label {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: 1px solid #286272; 
+    background: rgba(255, 255, 255, 0.2); 
+    transition: all 0.3s ease;/
+  }
+  
+  .contact form button {
+    background-color: #395e68;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s; /* Transform effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+  
+.contact form button:hover {
+    background-color: #21a1f1;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.contact form button:active {
+    transform: translateY(1px); /* Push down effect when clicked */
+}
+
+/* About Section */
+.about {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #3498db, #8e44ad, #e74c3c, #f39c12);
+    background-size: 400% 400%;
+    animation: gradientAnimation 11s ease infinite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .about:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
+  }
+  
+  .profile-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .profile-apict {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: url('/assets/images/budi.jpg') no-repeat center center/cover;
+    margin-bottom: 20px;
+    border: 4px solid #ffffff;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .profile-apict:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+  
+  .profile-info p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 20px 0;
+    max-width: 800px;
+  }
+  
+  .profile-info p:first-child {
+    font-weight: bold;
+  }
+  
+  .profile-info p:last-child {
+    font-style: italic;
+  }
+  
+  .skills-about {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .skills-about h2 {
+    font-size: 1em;
+    margin-bottom: 30px;
+    color: #ffffff;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .about-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .about-item {
+    color: #ffffff;
+    padding: 6px 2px;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+  }
+
+/* about sosmed icon */
+  .sosmed-container {
+    display: flex;
+    align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    gap: 10px; /* Jarak antara judul dan ikon */
+}
+
+.sosmed-icons {
+    display: flex;
+    gap: 10px; /* Jarak antar ikon */
+}
+
+.sosmed-icons a {
+    color: #0077b5; /* Warna ikon LinkedIn */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    font-size: 24px; /* Ukuran ikon */
+    transition: color 0.3s, transform 0.3s; /* Transisi untuk warna dan transformasi */
+}
+
+.sosmed-icons a:hover {
+    color: #005582; /* Warna saat hover untuk LinkedIn */
+    transform: scale(1.2); /* Membesarkan ikon saat hover */
+}
+
+.sosmed-icons a.instagram {
+    color: #E1306C; /* Warna ikon Instagram */
+}
+
+.sosmed-icons a.instagram:hover {
+    color: #C13584; /* Warna saat hover untuk Instagram */
+}
+
+.riwayat-container {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen dalam kolom */
+    gap: 10px; /* Jarak antar item */
+}
+.riwayat-item {
+    display: flex;
+    justify-content: flex-start; /* Mengatur item sejajar ke kiri */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+}
+.tahun {
+    font-weight: bold; /* Membuat tahun lebih tebal */
+    margin-right: 10px; /* Jarak antara tahun dan keterangan */
+}
+.keterangan {
+    flex-grow: 1; /* Membuat keterangan mengisi ruang yang tersisa */
+}
+
+/* Certificate Section */
+.certificate-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+  
+  .certificates {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Mengurangi gap antar kartu */
+  }
+  
+  .certificate-card {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px; /* Ukuran lebih kecil */
+    height: 280px; /* Tinggi lebih kecil */
+    cursor: pointer;
+  }
+  
+  .certificate-card:hover {
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .certificate-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .certificate-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .certificate-card:hover .certificate-content img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+  }
+  
+  .certificate-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Menyelaraskan teks deskripsi secara vertikal */
+}
+
+.certificate-description h3 {
+    font-size: 1rem; /* Ukuran font lebih kecil */
+    margin-bottom: 5px;
+}
+
+.certificate-description p {
+    font-size: 0.8rem; /* Ukuran font deskripsi lebih kecil */
+}
+  .certificate-section h2 {
+    text-align: center; /* Membuat judul di tengah */
+    font-size: 2rem; /* Ukuran font lebih besar */
+    position: relative; /* Untuk elemen dekoratif */
+    margin-bottom: 30px; /* Memberikan jarak bawah */
+  }
+  
+  /* Hover effect on description */
+  .certificate-card:hover .certificate-description {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+  
+  .modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        min-width: 100%; 
+      }
+      .profile-pic {
+        width: 40vw;
+        height: 40vw;
+        margin: 0;
+      }
+      .nav {
+        flex-direction: column;
+      }
+    
+    .certificates {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .certificate-card {
+        width: 100%;
+      }
+
+    .logo{
+        display: none;
+    }
+      .social-icons {
+        flex-direction: row; /* Ikon tetap sejajar secara horizontal */
+        justify-content: center; /* Memastikan tetap di tengah layar */
+        padding: 0; /* Menghapus padding tambahan jika ada */
+    }
+
+    .social-icons a {
+        margin: 0 10px; /* Jarak antar ikon agar lebih seragam */
+        padding: 10px; /* Ukuran padding untuk lebih simetris */
+    }
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .profile-pic {
+        width: 50vw;
+        height: 50vw;
+        margin-right: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .text-content{
+        max-width: 100%;
+    }
+    .contact {
+        padding: 30px 15px;
+      }
+    
+      .contact h2 {
+        font-size: 2rem;
+      }
+    
+      .contact p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+    
+      .contact form {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+    
+      .contact form input,
+      .contact form textarea {
+        padding: 10px;
+      }
+    
+      .contact form button {
+        padding: 10px 16px;
+      }
+    
+}
+
+
+@media (max-width: 480px) {
+
+    .container {
+        flex-direction: row; /* Tetap horizontal */
+        justify-content: center; /* Atur jarak antar elemen */
+        height: 60px;
+        padding: 0 15px;
+    }
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    .text-content h1 {
+        font-size: 28px;
+    }
+    .text-content h2 {
+        font-size: 22px;
+    }
+    .text-content p {
+        font-size: 14px;
+    }
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .nav {
+        flex-direction: row; /* Ubah layout navigasi menjadi kolom */
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .logo{
+        display: none;
+    }
+
+    .nav a {
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    .nav a.active::after, .nav a:hover::after {
+        bottom: -3px; /* Kurangi jarak underline */
+        height: 1px;
+    }
+    .hire-me {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}

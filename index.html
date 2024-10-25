@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio | Budi Prasetio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="content" data-aos="fade-up">
+      <div class="profile-pic" id="profile"></div>
+      <div class="text-content">
+        <h1>Hi, It's <span>Budi</span></h1>
+        <h2>I'm a <span id="role"></span></h2>
+        <p>
+          Hi folks! I'm Budi Prasetio, undergraduate degree in computer engineering. I am addicted to technology, and always interested in trying new things. For now I am more interested in Web Development. Using react vite as front end and
+          express js backend.
+        </p>
+        <a href="assets/Budi_Prasetio.pdf" class="download-cv" download="Andi_Luthfi_CV.pdf"> <i class="fas fa-download"></i> Download CV </a>
+
+        <div class="social-icons" data-aos="fade-right">
+          <a href="https://www.linkedin.com/in/budi-prasetio-886734245/"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/budiprasetio"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/budiprasetiio/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="contact.html" class="hire-me">Hire Me</a>
+      </div>
+    </div>
+
+    <div class="additional-content">
+      <h2 data-aos="fade-down">PROJECT</h2>
+      <!-- cards -->
+      <div class="cards">
+        <div class="card" data-aos="flip-left">
+          <div class="card-content">
+            <img src="assets/images/bapenda.png" alt="Bapenda" loading="lazy" />
+            <div class="card-description">Dashboard Monitoring Badan Pendapatan Daerah Kota Surabaya.</div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="flip-right">
+          <div class="card-content">
+            <img src="assets/images/zastore.png" alt="zastoregames" loading="lazy" />
+            <div class="card-description">zastoregames.id merupakan sebuah aplikasi Top-up games yang digunakan oleh kebanyakan orang.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- skills icon -->
+      <div class="skills" data-aos="fade-up">
+        <div class="skills-container">
+          <div class="skill skill-html">
+            <i class="fab fa-html5"></i>
+            <p>HTML5</p>
+          </div>
+          <div class="skill skill-css">
+            <i class="fab fa-css3-alt"></i>
+            <p>CSS3</p>
+          </div>
+          <div class="skill skill-js">
+            <i class="fab fa-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill skill-react">
+            <i class="fab fa-react"></i>
+            <p>React</p>
+          </div>
+          <div class="skill skill-node">
+            <i class="fab fa-node"></i>
+            <p>Node.js</p>
+          </div>
+          <div class="skill skill-mysql">
+            <i class="fas fa-database"></i>
+            <p>MySQL</p>
+          </div>
+          <div class="skill skill-python">
+            <i class="fab fa-python"></i>
+            <p>Python</p>
+          </div>
+          <div class="skill skill-arduino">
+            <i class="fas fa-microchip"></i>
+            <p>Arduino</p>
+          </div>
+          <div class="skill skill-ai">
+            <i class="fas fa-robot"></i>
+            <p>AI</p>
+          </div>
+          <div class="skill skill-networking">
+            <i class="fas fa-network-wired"></i>
+            <p>Networking</p>
+          </div>
+          <div class="skill skill-express">
+            <img src="assets/images/express.png" alt="Express.js" width="50" />
+            <br />
+            <br />
+            <p>Express.js</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- skills text -->
+    <div class="skills-section">
+      <h2 data-aos="zoom-out-up">SKILLS</h2>
+      <div class="skills-list" data-aos="fade-up">
+        <div class="skill-item">UI/UX Design</div>
+        <div class="skill-item">Machine Learning</div>
+        <div class="skill-item">Deep Learning</div>
+        <div class="skill-item">System Administrator</div>
+        <div class="skill-item">Fullstack Web Development</div>
+        <div class="skill-item">Devops</div>
+      </div>
+    </div>
+    <!-- certificate -->
+    <div id="certificate-container"></div>
+
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+    <!-- AOS Library Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
